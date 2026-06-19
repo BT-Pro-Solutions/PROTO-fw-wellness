@@ -1,0 +1,104 @@
+:root {
+  --color-teal-950: #0f2e38;
+  --color-teal-900: #1a4d5c;
+  --color-teal-800: #236878;
+  --color-teal-700: #2d8094;
+  --color-teal-500: #4aabb8;
+  --color-teal-300: #7ec4b8;
+  --color-teal-100: #d4ede8;
+
+  --color-coral-500: #e07a5f;
+  --color-coral-400: #e8917a;
+  --color-amber-400: #f2cc8f;
+  --color-sage-400: #81b29a;
+
+  --color-bg: #f7f5f0;
+  --color-bg-elevated: #ffffff;
+  --color-bg-muted: #edeae3;
+  --color-text: #1c2b33;
+  --color-text-muted: #5a6b73;
+  --color-text-inverse: #ffffff;
+  --color-border: rgba(26, 77, 92, 0.12);
+  --color-border-strong: rgba(26, 77, 92, 0.22);
+
+  --color-primary: var(--color-teal-900);
+  --color-primary-hover: var(--color-teal-800);
+  --color-accent: var(--color-coral-500);
+  --color-accent-soft: rgba(224, 122, 95, 0.12);
+  --color-success: var(--color-sage-400);
+  --color-crisis: #c0392b;
+  --color-crisis-soft: rgba(192, 57, 43, 0.1);
+
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(15, 46, 56, 0.06);
+  --shadow-md: 0 4px 16px rgba(15, 46, 56, 0.08);
+  --shadow-lg: 0 12px 40px rgba(15, 46, 56, 0.12);
+  --shadow-glow: 0 0 0 1px rgba(126, 196, 184, 0.3), 0 8px 32px rgba(45, 128, 148, 0.15);
+
+  --header-height: 3.5rem;
+  --layout-max-width: 72rem;
+  --content-max-width: 32rem;
+  --transition: 180ms ease;
+  --font-scale: 1;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --content-max-width: 42rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --content-max-width: 56rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --content-max-width: 64rem;
+  }
+}
+
+[data-text-size='large'] {
+  --font-scale: 1.12;
+}
+
+[data-text-size='xlarge'] {
+  --font-scale: 1.24;
+}
+
+[data-theme='high-contrast'] {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: #333333;
+  --color-border: rgba(0, 0, 0, 0.3);
+  --color-primary: #000000;
+}
