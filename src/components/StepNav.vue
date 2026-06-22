@@ -14,7 +14,7 @@ const { translate, resetFlow } = useAppState()
 
 function goBack() {
   if (props.backTo) {
-    router.push(props.backTo)
+    router.replace(props.backTo)
     return
   }
   router.back()

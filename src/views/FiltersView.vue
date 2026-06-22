@@ -20,7 +20,7 @@ function skipFilters() {
 
 <template>
   <div class="step-content fade-up">
-    <StepNav />
+    <StepNav back-to="/support/category" />
 
     <h2 class="step-heading">{{ translate('intake.q2') }}</h2>
     <p class="step-subheading">Select any that apply, or skip to see all options.</p>
