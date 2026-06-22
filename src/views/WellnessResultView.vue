@@ -5,7 +5,7 @@ import StepNav from '../components/StepNav.vue'
 import { useAppState } from '../composables/useAppState'
 
 const router = useRouter()
-const { state, translate } = useAppState()
+const { state, translate, startFlow } = useAppState()
 
 const result = computed(() => {
   const need = state.wellnessNeed || 'browsing'
@@ -16,10 +16,8 @@ const result = computed(() => {
 })
 
 function findResources() {
-  state.flow = 'support'
-  state.helpingOther = false
+  startFlow('support')
   state.category = 'generalWellness'
-  state.filters = []
   router.push('/support/location')
 }
 

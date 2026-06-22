@@ -65,13 +65,19 @@ button {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-  outline: 3px solid var(--color-teal-500);
+  outline: 3px solid var(--color-primary-500);
   outline-offset: 2px;
 }
 
 img,
-svg {
+svg,
+video {
   display: block;
+  max-width: none;
+}
+
+img,
+svg {
   max-width: 100%;
 }
 

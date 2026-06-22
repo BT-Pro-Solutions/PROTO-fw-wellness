@@ -7,7 +7,6 @@ const state = reactive({
   readAloud: false,
   showAccessibility: false,
   flow: null,
-  helpingOther: false,
   category: null,
   filters: [],
   userLocation: null,
@@ -35,7 +34,6 @@ export function useAppState() {
 
   function resetFlow() {
     state.flow = null
-    state.helpingOther = false
     state.category = null
     state.filters = []
     state.userLocation = null
@@ -44,10 +42,9 @@ export function useAppState() {
     state.wellnessNeed = null
   }
 
-  function startFlow(flow, helpingOther = false) {
+  function startFlow(flow) {
     resetFlow()
     state.flow = flow
-    state.helpingOther = helpingOther
   }
 
   function toggleFilter(id) {

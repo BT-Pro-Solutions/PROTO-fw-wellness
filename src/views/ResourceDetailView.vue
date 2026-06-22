@@ -3,8 +3,9 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import StepNav from '../components/StepNav.vue'
 import AppIcon from '../components/AppIcon.vue'
+import ResourceLogo from '../components/ResourceLogo.vue'
 import { useAppState } from '../composables/useAppState'
-import { resources, getDirectionsUrl, getPhoneUrl } from '../data/resources'
+import { resources, getDirectionsUrl, getMapEmbedUrl, getPhoneUrl } from '../data/resources'
 
 const route = useRoute()
 const { translate } = useAppState()
@@ -13,7 +14,7 @@ const resource = computed(() => resources.find((r) => r.id === route.params.id))
 
 function saveToPhone() {
   if (!resource.value) return
-  const text = `${resource.value.name}\n${resource.value.phone}\n${resource.value.address}\n${resource.value.referralCode}`
+  const text = `${resource.value.name}\n${resource.value.phone}\n${resource.value.address}`
   if (navigator.share) {
     navigator.share({ title: resource.value.name, text })
   } else if (navigator.clipboard) {
@@ -27,9 +28,14 @@ function saveToPhone() {
     <StepNav />
 
     <div class="card card--highlight">
-      <h2>{{ resource.name }}</h2>
-      <div class="tag-row">
-        <span v-for="tag in resource.tags" :key="tag" class="tag">{{ tag }}</span>
+      <div class="resource-card__header resource-card__header--detail">
+        <ResourceLogo :src="resource.logo" :alt="resource.name" />
+        <div class="resource-card__header-body">
+          <h2>{{ resource.name }}</h2>
+          <div class="tag-row">
+            <span v-for="tag in resource.tags" :key="tag" class="tag">{{ tag }}</span>
+          </div>
+        </div>
       </div>
 
       <div class="detail-row">
@@ -74,15 +80,21 @@ function saveToPhone() {
           <div class="detail-row__value">{{ resource.address }}</div>
         </div>
       </div>
+
+      <div class="resource-map">
+        <iframe
+          :src="getMapEmbedUrl(resource)"
+          :title="`${translate('resource.map')} — ${resource.name}`"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        />
+      </div>
     </div>
 
     <div class="card">
       <h3>{{ translate('resource.howToEnroll') }}</h3>
       <p style="margin-top: var(--space-3)">{{ resource.enrollment }}</p>
-      <div class="referral-note">
-        {{ translate('resource.referral') }} · {{ translate('resource.referralCode') }}:
-        <span class="referral-code">{{ resource.referralCode }}</span>
-      </div>
     </div>
 
     <div class="btn-row">

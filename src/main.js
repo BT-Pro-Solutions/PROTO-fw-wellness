@@ -5,6 +5,7 @@ import { registerIcons } from './icons/register'
 import './styles/variables.css'
 import './styles/base.css'
 import './styles/components.css'
+import './styles/landing.css'
 
 registerIcons()
 

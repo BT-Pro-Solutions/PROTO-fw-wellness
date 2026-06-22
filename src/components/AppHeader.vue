@@ -3,6 +3,12 @@ import { useRouter } from 'vue-router'
 import AppIcon from './AppIcon.vue'
 import { useAppState } from '../composables/useAppState'
 import { languages } from '../data/translations'
+import wellnessLogo from '../images/WellnessLogo.svg'
+import wellnessLogoLight from '../images/WellnessLogo-Light.svg'
+
+defineProps({
+  overlay: { type: Boolean, default: false },
+})
 
 const router = useRouter()
 const { state, translate } = useAppState()
@@ -17,16 +23,15 @@ function goHome() {
 </script>
 
 <template>
-  <header class="app-header">
+  <header class="app-header" :class="{ 'app-header--overlay': overlay }">
     <div class="header-inner">
-      <router-link to="/" class="brand" @click="goHome">
-        <div class="brand-mark" aria-hidden="true">
-          <AppIcon icon="lucide:map-pin" size="1.25rem" />
-        </div>
-        <div class="brand-text">
-          <span class="brand-city">{{ translate('brand.city') }}</span>
-          <span class="brand-name">{{ translate('brand.product') }}</span>
-        </div>
+      <router-link to="/" class="brand brand--logo" @click="goHome">
+        <img
+          :src="overlay ? wellnessLogo : wellnessLogoLight"
+          alt="Wellness 4 Fort Wayne"
+          class="brand-logo"
+          :class="{ 'brand-logo--overlay': overlay }"
+        />
       </router-link>
 
       <div class="header-actions">
@@ -55,11 +60,25 @@ function goHome() {
 </template>
 
 <style scoped>
-.brand-mark :deep(svg) {
-  color: var(--color-teal-300);
+.brand--logo {
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 3.25rem;
+}
+
+.brand-logo--overlay {
+  height: 4.75rem;
 }
 
 .icon-btn :deep(svg) {
   color: var(--color-text);
+}
+
+.app-header--overlay .icon-btn :deep(svg) {
+  color: #ffffff;
 }
 </style>

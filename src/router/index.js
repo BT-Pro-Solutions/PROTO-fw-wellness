@@ -13,7 +13,7 @@ import WellnessResultView from '../views/WellnessResultView.vue'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
-    { path: '/', name: 'home', component: HomeView },
+    { path: '/', name: 'home', component: HomeView, meta: { landing: true } },
     { path: '/support/category', name: 'category', component: CategoryView },
     { path: '/support/filters', name: 'filters', component: FiltersView },
     { path: '/support/location', name: 'location', component: LocationView },

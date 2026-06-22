@@ -10,28 +10,23 @@ export const translations = {
     my: 'သင်ပံ့ပိုးမှုကို ထိုက်တန်ပါတယ် — တရားစီရင်ခြင်းမရှိ၊ ကုန်ကျစရိတ်မရှိ။',
   },
   'welcome.description': {
-    en: 'Connect with free and low-cost mental health, wellness, and basic needs services in Fort Wayne. Tap to get started — no login, no paperwork.',
-    es: 'Conéctate con servicios gratuitos y de bajo costo de salud mental, bienestar y necesidades básicas en Fort Wayne. Solo toca para comenzar — sin inicio de sesión, sin papeleo.',
+    en: 'Connect with free and low-cost mental health, wellness, and basic needs services in Fort Wayne.',
+    es: 'Conéctate con servicios gratuitos y de bajo costo de salud mental, bienestar y necesidades básicas en Fort Wayne.',
     my: 'Fort Wayne ရှိ အခမဲ့နှင့် ကုန်ကျစရိတ်နည်းသော စိတ်ကျန်းမာရေး၊ ကျန်းမာရေးနှင့် အခြေခံလိုအပ်ချက်ဝန်ဆောင်မှုများနှင့် ချိတ်ဆက်ပါ။',
   },
   'welcome.findSupport': {
-    en: 'Find support for myself',
-    es: 'Buscar apoyo para mí',
-    my: 'ကျွန်ုပ်အတွက် အကူအညီရှာပါ',
-  },
-  'welcome.helpOther': {
-    en: 'Help for a friend or family member',
-    es: 'Ayuda para un amigo o familiar',
-    my: 'သူငယ်ချင်း သို့မဟုတ် မိသားစုအတွက် အကူအညီ',
+    en: 'Find Local Support',
+    es: 'Buscar apoyo local',
+    my: 'ဒေသဆိုင်ရာ အကူအညီ ရှာပါ',
   },
   'welcome.crisis': {
-    en: 'I need help now',
+    en: 'I Need Help Now',
     es: 'Necesito ayuda ahora',
     my: 'အခု အကူအညီလိုပါတယ်',
   },
   'welcome.wellness': {
-    en: 'Take a quick wellness check-in',
-    es: 'Hacer un chequeo rápido de bienestar',
+    en: 'Do a Quick Wellness Check-In',
+    es: 'Hacer un chequeo de bienestar',
     my: 'ကျန်းမာရေး စစ်ဆေးမှုတစ်ခု ပြုလုပ်ပါ',
   },
   'welcome.free': {
@@ -44,10 +39,10 @@ export const translations = {
     es: 'Privado y fácil de usar',
     my: 'သီးသန့်နှင့် အသုံးပြုရလွယ်ကူ',
   },
-  'welcome.sponsoredBy': {
-    en: 'A community service provided by',
-    es: 'Un servicio comunitario proporcionado por',
-    my: 'ပံ့ပိုးပေးသော ရပ်ရွာဝန်ဆောင်မှု',
+  'welcome.broughtBy': {
+    en: 'Brought to you by',
+    es: 'Presentado por',
+    my: 'ပံ့ပိုးပေးသူများ',
   },
   accessibility: {
     en: 'Accessibility',
@@ -72,14 +67,9 @@ export const translations = {
   back: { en: 'Back', es: 'Atrás', my: 'နောက်သို့' },
   startOver: { en: 'Start Over', es: 'Empezar de nuevo', my: 'အစကနေ ပြန်စပါ' },
   'intake.q1': {
-    en: 'What do you need help with today?',
-    es: '¿Con qué necesitas ayuda hoy?',
-    my: 'ယနေ့ ဘာနဲ့ အကူအညီလိုပါသလဲ?',
-  },
-  'intake.q1.other': {
-    en: 'What does your friend or family member need help with?',
-    es: '¿Con qué necesita ayuda tu amigo o familiar?',
-    my: 'သင့်သူငယ်ချင်း သို့မဟုတ် မိသားစုဝင်ကို ဘာနဲ့ အကူအညီလိုပါသလဲ?',
+    en: 'What kind of support are you looking for today?',
+    es: '¿Qué tipo de apoyo buscas hoy?',
+    my: 'ယနေ့ ဘယ်လိုအမျိုးအစား အကူအညီ ရှာနေပါသလဲ?',
   },
   'intake.stress': {
     en: 'Stress / Anxiety',
@@ -148,9 +138,8 @@ export const translations = {
     es: 'No pudimos detectar tu ubicación. Ingresa tu área abajo, u omite para ver todos los recursos.',
     my: 'တည်နေရာ မတွေ့ရှိနိုင်ပါ။ အောက်တွင် ဒေသထည့်ပါ၊ သို့မဟုတ် အရင်းအမြစ်အားလုံး ကြည့်ရန် ကျော်ပါ။',
   },
-  'results.title': { en: 'We found help for you', es: 'Encontramos ayuda para ti', my: 'သင့်အတွက် အကူအညီ တွေ့ရှိပါသည်' },
-  'results.title.other': {
-    en: 'Resources that can help',
+  'results.title': {
+    en: 'Resources that may help',
     es: 'Recursos que pueden ayudar',
     my: 'ကူညီနိုင်သော အရင်းအမြစ်များ',
   },
@@ -168,13 +157,8 @@ export const translations = {
   'resource.hours': { en: 'Hours', es: 'Horario', my: 'ဖွင့်ချိန်' },
   'resource.languages': { en: 'Languages', es: 'Idiomas', my: 'ဘာသာစကားများ' },
   'resource.address': { en: 'Address', es: 'Dirección', my: 'လိပ်စာ' },
+  'resource.map': { en: 'Map location', es: 'Ubicación en el mapa', my: 'မြေပုံတွင် တည်နေရာ' },
   'resource.howToEnroll': { en: 'How to get started', es: 'Cómo empezar', my: 'စတင်နည်း' },
-  'resource.referral': {
-    en: 'Mention you found this on the Fort Wayne Wellness site',
-    es: 'Menciona que encontraste esto en el sitio de Bienestar de Fort Wayne',
-    my: 'Fort Wayne Wellness ဝဘ်ဆိုက်တွင် တွေ့ရှိခဲ့ကြောင်း ပြောပါ',
-  },
-  'resource.referralCode': { en: 'Referral code', es: 'Código de referencia', my: 'ရည်ညွှန်းကုဒ်' },
   'resource.call': { en: 'Call', es: 'Llamar', my: 'ဖုန်းခေါ်ပါ' },
   'resource.save': { en: 'Save to phone', es: 'Guardar en el teléfono', my: 'ဖုန်းတွင် သိမ်းပါ' },
   'crisis.title': {
