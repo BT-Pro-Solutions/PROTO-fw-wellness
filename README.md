@@ -34,10 +34,23 @@ npm run preview
 
 ## GitHub Pages
 
-1. Enable **GitHub Pages** → Source: **GitHub Actions**
-2. Push to `main` — the workflow builds with `base: /PROTO-fw-wellness/` and deploys
+**Live URL (after Pages is enabled):** https://bt-pro-solutions.github.io/PROTO-fw-wellness/
 
-If your repo name differs, update `base` in `vite.config.js` and the workflow env.
+### One-time setup
+
+1. Open [repository Pages settings](https://github.com/BT-Pro-Solutions/PROTO-fw-wellness/settings/pages)
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+3. Push to `main` (or re-run the **Deploy to GitHub Pages** workflow)
+
+The workflow builds with `base: /PROTO-fw-wellness/` and publishes the `dist` folder. If the repo is renamed, update `GITHUB_REPOSITORY` in the `build:pages` script in `package.json`.
+
+### Test the production build locally
+
+```bash
+npm run preview:pages
+```
+
+Open http://localhost:4173/PROTO-fw-wellness/
 
 ## Project structure
 
