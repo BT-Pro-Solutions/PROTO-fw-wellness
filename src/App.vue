@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { RouterView } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
+import AppFooter from './components/AppFooter.vue'
 import AccessibilityPanel from './components/AccessibilityPanel.vue'
 import { useAppState } from './composables/useAppState'
 
@@ -18,6 +19,7 @@ const isLanding = computed(() => route.name === 'home')
       <main class="app-main" :class="{ 'app-main--landing': isLanding }">
         <RouterView />
       </main>
+      <AppFooter v-if="!isLanding" />
     </div>
     <Transition name="drawer">
       <AccessibilityPanel v-if="state.showAccessibility" />

@@ -37,7 +37,7 @@ function skipFilters() {
       </button>
     </div>
 
-    <div class="btn-row" style="margin-top: auto; padding-top: var(--space-8)">
+    <div class="btn-row">
       <button class="btn btn--primary btn--block" @click="continueFlow">
         {{ translate('location.continue') }}
       </button>

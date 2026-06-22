@@ -3,15 +3,20 @@ import { useRouter } from 'vue-router'
 import AppIcon from './AppIcon.vue'
 import { useAppState } from '../composables/useAppState'
 
-defineProps({
+const props = defineProps({
   showBack: { type: Boolean, default: true },
   showStartOver: { type: Boolean, default: true },
+  backTo: { type: String, default: null },
 })
 
 const router = useRouter()
 const { translate, resetFlow } = useAppState()
 
 function goBack() {
+  if (props.backTo) {
+    router.push(props.backTo)
+    return
+  }
   router.back()
 }
 

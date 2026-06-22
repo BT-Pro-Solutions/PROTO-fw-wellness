@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import StepNav from '../components/StepNav.vue'
 import AppIcon from '../components/AppIcon.vue'
@@ -11,6 +11,7 @@ const { state, translate } = useAppState()
 
 const phase = ref('detecting')
 const manualArea = ref('')
+let redirectTimer = null
 
 onMounted(async () => {
   const result = await requestGeolocation()
@@ -21,9 +22,16 @@ onMounted(async () => {
       ? translate('location.found')
       : `${result.lat.toFixed(2)}, ${result.lng.toFixed(2)}`
     phase.value = 'found'
-    setTimeout(() => router.push('/support/results'), 1200)
+    redirectTimer = setTimeout(() => router.replace('/support/results'), 1200)
   } else {
     phase.value = 'manual'
+  }
+})
+
+onUnmounted(() => {
+  if (redirectTimer) {
+    clearTimeout(redirectTimer)
+    redirectTimer = null
   }
 })
 
@@ -31,13 +39,13 @@ function submitManual() {
   if (manualArea.value.trim()) {
     state.locationLabel = manualArea.value.trim()
   }
-  router.push('/support/results')
+  router.replace('/support/results')
 }
 
 function skip() {
   state.userLocation = null
   state.locationLabel = ''
-  router.push('/support/results')
+  router.replace('/support/results')
 }
 </script>
 

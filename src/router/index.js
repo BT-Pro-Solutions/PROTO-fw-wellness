@@ -9,11 +9,15 @@ import CrisisView from '../views/CrisisView.vue'
 import WellnessMoodView from '../views/WellnessMoodView.vue'
 import WellnessNeedView from '../views/WellnessNeedView.vue'
 import WellnessResultView from '../views/WellnessResultView.vue'
+import LegalView from '../views/LegalView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     { path: '/', name: 'home', component: HomeView, meta: { landing: true } },
+    { path: '/privacy', name: 'privacy', component: LegalView, meta: { legalPage: 'privacy' } },
+    { path: '/terms', name: 'terms', component: LegalView, meta: { legalPage: 'terms' } },
+    { path: '/disclaimer', name: 'disclaimer', component: LegalView, meta: { legalPage: 'disclaimer' } },
     { path: '/support/category', name: 'category', component: CategoryView },
     { path: '/support/filters', name: 'filters', component: FiltersView },
     { path: '/support/location', name: 'location', component: LocationView },

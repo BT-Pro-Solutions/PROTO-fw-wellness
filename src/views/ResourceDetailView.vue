@@ -11,16 +11,6 @@ const route = useRoute()
 const { translate } = useAppState()
 
 const resource = computed(() => resources.find((r) => r.id === route.params.id))
-
-function saveToPhone() {
-  if (!resource.value) return
-  const text = `${resource.value.name}\n${resource.value.phone}\n${resource.value.address}`
-  if (navigator.share) {
-    navigator.share({ title: resource.value.name, text })
-  } else if (navigator.clipboard) {
-    navigator.clipboard.writeText(text)
-  }
-}
 </script>
 
 <template>
@@ -111,10 +101,6 @@ function saveToPhone() {
         <AppIcon icon="lucide:navigation" size="1.125rem" />
         {{ translate('results.directions') }}
       </a>
-      <button class="btn btn--secondary btn--block" @click="saveToPhone">
-        <AppIcon icon="lucide:bookmark" size="1.125rem" />
-        {{ translate('resource.save') }}
-      </button>
     </div>
   </div>
 </template>
